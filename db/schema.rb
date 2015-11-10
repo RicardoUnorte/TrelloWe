@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20151107211741) do
     t.integer  "user_id"
     t.string   "title"
     t.string   "description"
-    t.time     "duration"
+    t.integer  "duration"
     t.date     "startdate"
     t.date     "deadline"
     t.string   "author"

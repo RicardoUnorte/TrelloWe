@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   # GET /tasks
   # GET /tasks.json
@@ -9,7 +9,6 @@ class TasksController < ApplicationController
     @nterminadas = Task.where(checked: false).order(deadline: :asc)
     @vencidas = Task.where("deadline < ? and checked = ?", Date.today, false)
     @nvencidas = Task.where("deadline > ? and checked = ?", Date.today, false)
-
   end
 
   # GET /tasks/1
